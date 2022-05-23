@@ -9,10 +9,16 @@ const Header = () => {
   // Our site features two visual headers, but they should be
   // grouped semantically as a single header.
   return (
-    <header>
+    <header
+      style={{
+        position: "sticky",
+        top: 0,
+        zIndex: 2,
+      }}
+    >
       <SuperHeader />
       <MainHeader>
-        <Logo className="loggo" />
+        <Logo />
         <Nav>
           <NavLink href="/sale">Sale</NavLink>
           <NavLink href="/new">New&nbsp;Releases</NavLink>
@@ -33,6 +39,7 @@ const MainHeader = styled.div`
   align-items: center;
   overflow: hidden;
   height: 72px;
+  background-color: white;
 
   & > :first-child {
     position: absolute;
